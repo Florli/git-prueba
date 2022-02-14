@@ -1,0 +1,164 @@
+/
+
+/* estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+background: #fff ;
+color: #333;
+-webkit-font-smoothing: antialiased;
+background-color: #b3cdd1;
+    background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
+font-size: 1rem ;      font-family: sans-serif;
+}
+  
+  button {
+   cursor: pointer;
+  }
+  /* fin reset */
+  
+  header {
+      height: 35%;
+      padding: 40px;
+      background-color: #111;
+      background-image: linear-gradient(315deg, #111 0%, rgb(33, 33, 33) 74%);
+  }
+  
+  
+  h1, h2, h3, hr {
+      margin: 10px 0;
+  }
+  nav {
+      padding: 10px;
+      background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  }
+  main {
+      margin: 40px;
+  }
+  div {
+      width: 100px;
+      height: 100px;
+      background-color: #d3d3d3;
+      margin: 40px;
+  }
+  footer {
+      background-color: #111;
+      color: #ec9f05;
+      text-align: center;
+      padding: 20px;
+  }
+  /* GRADIENTES */
+  .gradLineal {
+      background-image: linear-gradient(to bottom right, orange 20%, darkviolet 80%);
+  }
+  .gradRadial {
+      background-image: radial-gradient(#009ffd 0%, #009ffd 30%, #2a2a72 30%, #2a2a72 40%, #009ffd 40%, #009ffd 45%, #2a2a72 40%, #2a2a72 50%, #009ffd 50%, #2a2a72 50%);
+  }
+  
+  /* TRANSICIONES */
+  .transicion {
+      transition: all 2s;
+  }
+  .transicion:hover {
+      width: 100%;
+      height: 300px;
+      border: #333 solid 10px;
+      background-image: linear-gradient(315deg, #fce043 0%, #fb7ba2 74%);
+  }
+  
+  /* TRANSFORMACIONES */
+  .mover {
+      transform: translateX(450px);/* Eje X, Eje Y */
+  }
+  .rotar {
+      transform: rotateZ(45deg);
+  }
+  .escalar {
+      transform: scale(1.75, 0.5);
+  }
+  .torcer {
+      transform: skew(20deg, 10deg);
+  }
+  
+  /* ANIMACION */
+  .tituloAnimado {
+      animation-name: titulo;
+      animation-iteration-count: 1;/* repeticion*/
+      animation-duration: 4s;
+  
+  }
+  .cajaAnimada {
+      animation-name: caja;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+  }
+  
+  /* KEYFRAMES */
+  @keyframes titulo {
+      from/* inicio */{
+          transform: translate(-200px);
+          opacity: 0;
+      }
+      to /* final */{
+          transform: translate(0);
+          opacity: 1;
+      }
+  }
+  @keyframes caja {
+      0%/* inicio */{
+          border-radius: 50%;
+          background-color: #ff4e00;
+          
+      }
+      20% {
+          transform: rotateY(45deg);
+          background-color: orange;
+      }
+      30% {
+          transform: translateX(70vw);
+      }
+      50% {
+          transform: scale(1.5, 0.5);
+          background-color: darkviolet;
+      }
+      75% {
+          transform: translateX(70vw);
+  
+      }
+      100%/* final */{
+        border-radius: 50%;
+        background-color: #ff4e00;
+        transform: skewX(-30deg);
+    }
+}
+
+  /* Css - Texto con Degradado animado */
+.tituloDegradado {
+    font-size: 4rem;
+    animation-name: fluido;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      /* animation: fluido 5s ease-in-out infinite; */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 300%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes fluido {
+    0% { background-position: 0 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0 50% }
+}
+
+@media (max-width: 480px){
+    .tituloDegradado {
+        font-size: 2rem;
+}
+}
